@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="application">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <!-- Application and controllers
+    -->
+    <script src="application.js"></script>
+    <script src="sharingController.js"></script>
+</head>
+
+<body>
+	<div class="panel-group">
+		<div ng-controller="SharingController as ctrl1">
+			<div ng-controller="SharingController as ctrl2">
+				<div ng-controller="SharingController as ctrl3">
+                    <div class="panel">
+                        <div class="panel-heading">Instance actions</div>
+                        <div class="btn-group">
+                            <button class='btn btn-primary' ng-click='ctrl1.action()'>Action ctrl1 {{ctrl1.data.index}}</button>
+					        <button class='btn btn-primary' ng-click='ctrl2.action()'>Action ctrl2 {{ctrl2.data.index}}</button>
+					        <button class='btn btn-primary' ng-click='ctrl3.action()'>Action ctrl3 {{ctrl3.data.index}}</button>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">Class actions</div>
+                        <div class="btn-group">
+                            <button class='btn btn-primary' ng-click='ctrl1.commonAction()'>Action ctrl1 {{ctrl1.commonIndex()}}</button>
+                            <button class='btn btn-primary' ng-click='ctrl2.commonAction()'>Action ctrl2 {{ctrl2.commonIndex()}}</button>
+                            <button class='btn btn-primary' ng-click='ctrl3.commonAction()'>Action ctrl3 {{ctrl3.commonIndex()}}</button>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
